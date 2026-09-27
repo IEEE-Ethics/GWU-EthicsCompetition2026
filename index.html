@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Student Ethics Competition | GWU IEEE and IEEE SSIT</title>
+<meta name="description" content="A student ethics case competition organized by GWU IEEE and the IEEE Society on Social Implications of Technology (SSIT).">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  /*
+    HOW TO EDIT
+    Anything highlighted in yellow on the page (class="tbd") is a placeholder.
+    Search this file for "EDIT:" to find every spot that needs your details.
+  */
+  :root {
+    --navy: #033C5A;      /* GW blue */
+    --buff: #A69362;      /* GW buff */
+    --ieee: #00629B;      /* IEEE blue */
+    --ink: #1B2A35;
+    --muted: #4E5E69;
+    --tint: #EDF2F5;
+    --line: #CBD6DD;
+    --paper: #FFFFFF;
+    --sans: "Public Sans", "Helvetica Neue", Arial, sans-serif;
+    --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --measure: 68ch;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--sans); font-size: 1.0625rem; line-height: 1.6;
+  }
+  a { color: var(--ieee); text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--buff); outline-offset: 3px; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  .tbd { background: #FFF3B0; color: #5C4A00; padding: 0 .25em; border-radius: 3px; }
+
+  /* Navigation */
+  header.nav {
+    position: sticky; top: 0; z-index: 10; background: var(--navy); color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,.12);
+  }
+  header.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 60px; }
+  .brand { color: #fff; text-decoration: none; font-weight: 700; font-size: .95rem; }
+  nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 20px; flex-wrap: wrap; }
+  nav a { color: #D9E4EB; text-decoration: none; font-size: .9rem; }
+  nav a:hover { color: #fff; text-decoration: underline; }
+  @media (max-width: 760px) { nav { display: none; } }
+
+  /* Hero */
+  .hero { background: var(--navy); color: #fff; padding: 72px 0 88px; }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: end; }
+  .presented { color: #C9BA8E; font-size: .95rem; margin: 0 0 18px; }
+  .hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.02; letter-spacing: -0.025em;
+    font-weight: 800; margin: 0 0 24px;
+  }
+  .hero .lede { font-family: var(--serif); font-size: 1.3rem; line-height: 1.5; color: #E3EBF0; max-width: 34ch; margin: 0 0 32px; }
+  .facts { display: grid; grid-template-columns: repeat(3, auto); gap: 8px 32px; margin: 0 0 36px; justify-content: start; }
+  .facts dt { font-size: .85rem; color: #A9BECB; }
+  .facts dd { margin: 0; font-weight: 700; }
+  .facts .tbd { background: rgba(255,243,176,.18); color: #FFF3B0; }
+  .btn {
+    display: inline-block; background: var(--buff); color: #1B1606; font-weight: 700;
+    padding: 14px 22px; border-radius: 4px; text-decoration: none;
+  }
+  .btn:hover { background: #BBA874; }
+  .btn.ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.4); margin-left: 8px; }
+  .btn.ghost:hover { border-color: #fff; }
+
+  /* The one bold element: a to-scale view of a team's time before the judges */
+  .round { background: #0A4A6E; border-radius: 6px; padding: 28px; }
+  .round h2 { font-size: 1.05rem; margin: 0 0 4px; font-weight: 700; }
+  .round p.sub { margin: 0 0 22px; color: #A9BECB; font-size: .92rem; }
+  .bar { display: flex; height: 64px; border-radius: 4px; overflow: hidden; }
+  .seg { transform-origin: left; }
+  .seg.present { flex: 8; background: #fff; }
+  .seg.flex { flex: 4; background: repeating-linear-gradient(135deg, #fff 0 6px, #C7D6E0 6px 12px); }
+  .seg.qa { flex: 5; background: var(--buff); }
+  .bar-labels { display: flex; margin-top: 12px; font-size: .88rem; }
+  .bar-labels div { color: #E3EBF0; }
+  .bar-labels strong { display: block; color: #fff; font-size: 1.35rem; line-height: 1.2; }
+  .bar-labels .l1 { flex: 12; } .bar-labels .l2 { flex: 5; }
+  .scale { display: flex; justify-content: space-between; font-size: .75rem; color: #7F9CAE; margin-top: 18px; border-top: 1px solid rgba(255,255,255,.18); padding-top: 6px; }
+  @media (prefers-reduced-motion: no-preference) {
+    .seg { animation: grow .7s cubic-bezier(.2,.7,.2,1) both; }
+    .seg.flex { animation-delay: .5s; } .seg.qa { animation-delay: .8s; }
+    @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  }
+
+  /* Content sections */
+  section.block { padding: 80px 0; border-bottom: 1px solid var(--line); }
+  section.block.alt { background: var(--tint); }
+  .two { display: grid; grid-template-columns: 260px 1fr; gap: 48px; }
+  .two > h2 { margin: 0; font-size: 1.75rem; line-height: 1.2; letter-spacing: -0.01em; color: var(--navy); }
+  .body { max-width: var(--measure); }
+  .body p, .body li { font-family: var(--serif); font-size: 1.125rem; line-height: 1.7; }
+  .body p:first-child { margin-top: 0; }
+  .body h3 { font-size: 1.1rem; color: var(--navy); margin: 32px 0 8px; }
+  .body h3.first { margin-top: 0; }
+  .body ul { padding-left: 1.2em; }
+  .body li { margin-bottom: 6px; }
+
+  ol.steps { list-style: none; counter-reset: s; padding: 0; margin: 0; }
+  ol.steps li { counter-increment: s; position: relative; padding: 0 0 22px 52px; }
+  ol.steps li::before {
+    content: counter(s); position: absolute; left: 0; top: 2px; width: 34px; height: 34px;
+    border-radius: 50%; background: var(--navy); color: #fff; font-family: var(--sans);
+    font-weight: 700; font-size: .95rem; display: grid; place-items: center;
+  }
+  ol.steps strong { font-family: var(--sans); display: block; color: var(--navy); }
+
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 1rem; }
+  th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-weight: 700; color: var(--navy); border-bottom: 2px solid var(--navy); }
+  td:first-child { white-space: nowrap; font-weight: 500; }
+
+  /* People */
+  .people { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; max-width: 760px; }
+  .person { padding: 18px 0 18px 18px; border-left: 3px solid var(--buff); margin-bottom: 18px; }
+  .person .name { font-weight: 700; font-size: 1.2rem; color: var(--navy); margin: 0; }
+  .person .role { margin: 2px 0 0; color: var(--muted); }
+  .people-group + .people-group { margin-top: 48px; }
+  .people-group h3 { font-size: 1.05rem; color: var(--ink); margin: 0 0 16px; }
+
+  .supporters { display: flex; flex-wrap: wrap; gap: 16px; }
+  .supporter {
+    flex: 1 1 220px; border: 1px solid var(--line); border-radius: 6px; padding: 24px;
+    background: var(--paper); min-height: 110px; display: flex; flex-direction: column; justify-content: center;
+  }
+  .supporter strong { color: var(--navy); font-size: 1.1rem; }
+  .supporter span { color: var(--muted); font-size: .95rem; }
+
+  footer { background: var(--navy); color: #C4D3DC; padding: 40px 0; font-size: .95rem; }
+  footer p { margin: 0 0 6px; }
+  footer a { color: #fff; }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .two { grid-template-columns: 1fr; gap: 20px; }
+  }
+  @media (max-width: 560px) {
+    .hero { padding: 48px 0 56px; }
+    .facts { grid-template-columns: 1fr; }
+    .people { grid-template-columns: 1fr; }
+    section.block { padding: 56px 0; }
+    .btn.ghost { margin: 10px 0 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">GWU IEEE Ethics Competition</a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#format">Format</a></li>
+        <li><a href="#compete">How to compete</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#people">Organizers and judges</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="presented">GWU IEEE and the IEEE Society on Social Implications of Technology present</p>
+        <h1>Student Ethics Competition</h1>
+        <p class="lede">Analyze an engineering case with no easy answer, then defend your reasoning before a panel of IEEE judges.</p>
+        <dl class="facts">
+          <!-- EDIT: event details -->
+          <div><dt>Date</dt><dd><span class="tbd">Month DD, 2026</span></dd></div>
+          <div><dt>Location</dt><dd><span class="tbd">Building, GWU</span></dd></div>
+          <div><dt>Sign up by</dt><dd><span class="tbd">Month DD, 2026</span></dd></div>
+        </dl>
+        <!-- EDIT: replace # with your Google Form or registration link -->
+        <a class="btn" href="#">Submit intent to compete</a>
+        <a class="btn ghost" href="https://www.ieee.org/about/corporate/governance/p7-8.html">Read the IEEE Code of Ethics</a>
+      </div>
+
+      <div class="round">
+        <h2>Your time before the judges</h2>
+        <p class="sub">Drawn to scale, per team</p>
+        <div class="bar" role="img" aria-label="Presentation of 8 to 12 minutes, followed by 5 minutes of judges' questions">
+          <div class="seg present"></div>
+          <div class="seg flex"></div>
+          <div class="seg qa"></div>
+        </div>
+        <div class="bar-labels">
+          <div class="l1"><strong>8–12 min</strong>Team presentation</div>
+          <div class="l2"><strong>5 min</strong>Judges' Q&amp;A</div>
+        </div>
+        <div class="scale"><span>0</span><span>8</span><span>12</span><span>17 min</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="about">
+    <div class="wrap two">
+      <h2>About the competition</h2>
+      <div class="body">
+        <p>The Student Ethics Competition is organized by the GWU IEEE Student Branch with IEEE SSIT, the IEEE Society on Social Implications of Technology, and supported by the GWU Department of Mechanical and Aerospace Engineering. It encourages students to study professional ethics and to practice the kind of reasoning engineers need when technical, business and public interests pull in different directions.</p>
+        <p>Every team receives the same hypothetical case. Teams identify the ethical issues at stake, weigh the options open to the people involved, and recommend a course of action. All analysis and recommendations must be grounded in the IEEE Code of Ethics.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt" id="format">
+    <div class="wrap two">
+      <h2>Format</h2>
+      <div class="body">
+        <ol class="steps">
+          <li><strong>Receive the case</strong>All teams get the same case study and a copy of the IEEE Code of Ethics <span class="tbd">on [date / at the start of the event]</span>.</li>
+          <li><strong>Prepare your analysis</strong>Build a slide presentation that identifies the ethical issues, the stakeholders, the relevant clauses of the Code, and your recommendation.</li>
+          <li><strong>Present</strong>Deliver your analysis in 8 to 12 minutes.</li>
+          <li><strong>Defend</strong>Answer questions from the judges for 5 minutes. Presentations are open to attendees, but only judges may ask questions.</li>
+        </ol>
+        <h3>Judging</h3>
+        <p>Judges evaluate how well each team identifies the ethical issues, applies the IEEE Code of Ethics, supports practical and well-reasoned recommendations, communicates clearly, and responds to questions. The decisions of the judges are final.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="compete">
+    <div class="wrap two">
+      <h2>How to compete</h2>
+      <div class="body">
+        <h3 class="first">Who can enter</h3>
+        <!-- EDIT: confirm eligibility rules -->
+        <ul>
+          <li>Teams of <span class="tbd">two</span> undergraduate students.</li>
+          <li>Open to students from <span class="tbd">GWU / DC-area universities</span>.</li>
+          <li>Current IEEE student membership <span class="tbd">required / encouraged</span>.</li>
+        </ul>
+        <h3>Sign up</h3>
+        <p>Submit the intent to compete form by <span class="tbd">Month DD, 2026</span>. Spots are limited to <span class="tbd">N</span> teams and are filled in the order forms are received.</p>
+        <h3>Awards</h3>
+        <!-- EDIT: prizes -->
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Place</th><th>Award</th></tr></thead>
+            <tbody>
+              <tr><td>First</td><td><span class="tbd">$ amount / prize</span></td></tr>
+              <tr><td>Second</td><td><span class="tbd">$ amount / prize</span></td></tr>
+              <tr><td>Third</td><td><span class="tbd">$ amount / prize</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt" id="schedule">
+    <div class="wrap two">
+      <h2>Schedule</h2>
+      <div class="body">
+        <!-- EDIT: times and activities -->
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Time</th><th>Activity</th></tr></thead>
+            <tbody>
+              <tr><td><span class="tbd">9:00 am</span></td><td>Check-in and team order draw</td></tr>
+              <tr><td><span class="tbd">9:30 am</span></td><td>Welcome and case briefing</td></tr>
+              <tr><td><span class="tbd">12:00 pm</span></td><td>Team presentations begin</td></tr>
+              <tr><td><span class="tbd">3:00 pm</span></td><td>Judges deliberate</td></tr>
+              <tr><td><span class="tbd">3:30 pm</span></td><td>Winners announced</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="people">
+    <div class="wrap two">
+      <h2>Organizers and judges</h2>
+      <div>
+        <div class="people-group">
+          <h3>Organizers</h3>
+          <div class="people">
+            <div class="person"><p class="name">Dr. Kartik Bulusu</p><p class="role">Associate Research Professor, MAE Department, GWU</p></div>
+            <div class="person"><p class="name">Andrew Aklagi</p><p class="role">Junior, ECE Department, GWU</p></div>
+            <div class="person"><p class="name">Alexander Brown</p><p class="role">Junior, ECE Department, GWU</p></div>
+            <div class="person"><p class="name">Murty Polavurapu</p><p class="role">IEEE SSIT</p></div>
+          </div>
+        </div>
+        <div class="people-group">
+          <h3>Judges</h3>
+          <div class="people">
+            <div class="person"><p class="name">William Blair</p><p class="role">IEEE DC Section</p></div>
+            <div class="person"><p class="name">Naveen Kancham</p><p class="role">IEEE Northern Virginia Section</p></div>
+            <div class="person"><p class="name">Marc Apter</p><p class="role">IEEE SSIT</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt" id="support">
+    <div class="wrap two">
+      <h2>Supported by</h2>
+      <!-- Tip: to use logos, put image files in your repo (e.g. images/gwu-mae.png) and add <img src="images/gwu-mae.png" alt="..."> inside each box -->
+      <div class="supporters">
+        <div class="supporter"><strong>MAE Department</strong><span>The George Washington University</span></div>
+        <div class="supporter"><strong>GWU IEEE</strong><span>Student Branch</span></div>
+        <div class="supporter"><strong>IEEE SSIT</strong><span>Society on Social Implications of Technology</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <!-- EDIT: contact email -->
+    <p>Questions? Email <a href="mailto:you@gwu.edu"><span class="tbd">you@gwu.edu</span></a></p>
+    <p>Organized by GWU IEEE and IEEE SSIT.</p>
+  </div>
+</footer>
+
+</body>
+</html>
