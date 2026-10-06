@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Interest Form | Student Ethics Competition | GWU MAE Department and IEEE SSIT with support from GWU IEEE, SHPE and Theta Tau</title>
+<meta name="description" content="Tell us you're interested in the GWU IEEE and IEEE SSIT Student Ethics Competition and which weekend dates work for your team.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Libre+Franklin:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ================================================================
+   SETUP: paste your Formspree (or similar) endpoint below.
+   Leave it empty and the form falls back to an email draft
+   addressed to the organizers.
+   ================================================================ */
+:root{
+  --navy:#033C5A; --buff:#AA9868; --ieee:#00629B;
+  --paper:#FBFBF8; --ink:#1A2630; --muted:#5A6873; --line:#D9DDD8;
+  --field:#FFFFFF; --off:#ECEDE9; --error:#B3261E; --ok:#1F6B45;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans:"Libre Franklin", "Helvetica Neue", Arial, sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F1A21; --ink:#E6E9EA; --muted:#9AA7AF; --line:#2B3A44;
+    --field:#15232C; --off:#1B2A33; --navy:#7FB4D3; --buff:#C9B98B; --ieee:#6CB4E0;
+    --error:#F2B8B5; --ok:#8FD4AE;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F1A21; --ink:#E6E9EA; --muted:#9AA7AF; --line:#2B3A44;
+  --field:#15232C; --off:#1B2A33; --navy:#7FB4D3; --buff:#C9B98B; --ieee:#6CB4E0;
+  --error:#F2B8B5; --ok:#8FD4AE;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1rem/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--ieee)}
+:focus-visible{outline:3px solid var(--ieee);outline-offset:2px}
+
+/* Header */
+.masthead{background:#033C5A;color:#fff;border-bottom:6px solid #AA9868}
+.masthead-inner{max-width:72rem;margin:0 auto;padding:2.5rem 1.25rem 2.25rem}
+.back{color:#CFE0EA;font-size:.9rem;text-decoration:none}
+.back:hover{text-decoration:underline}
+.masthead h1{font:700 clamp(2rem,5vw,3.25rem)/1.08 var(--serif);margin:.75rem 0 .75rem;letter-spacing:-.01em;max-width:18ch}
+.masthead p{margin:0;max-width:60ch;color:#DCE7EE;font-size:1.05rem}
+
+/* Layout */
+.wrap{max-width:72rem;margin:0 auto;padding:2rem 1.25rem 4rem;display:grid;grid-template-columns:minmax(0,1fr) 20rem;gap:3rem;align-items:start}
+@media (max-width:900px){.wrap{grid-template-columns:1fr;gap:2rem}.facts{order:-1}}
+
+/* Facts sidebar */
+.facts{position:sticky;top:1.5rem;border-left:3px solid var(--buff);padding-left:1.25rem}
+@media (max-width:900px){.facts{position:static}}
+.facts h2{font:600 1.15rem/1.3 var(--serif);margin:0 0 .5rem}
+.facts section+section{margin-top:1.75rem}
+.facts p,.facts li{font-size:.92rem;color:var(--muted);margin:.25rem 0}
+.facts ul{padding-left:1.1rem;margin:.25rem 0}
+.prizes{width:100%;border-collapse:collapse;font-size:.95rem}
+.prizes th,.prizes td{text-align:left;padding:.5rem 0;border-bottom:1px solid var(--line);vertical-align:top}
+.prizes th{font-weight:600;width:4.5rem;color:var(--ink)}
+.prizes .amt{font:700 1.35rem/1 var(--serif);color:var(--navy);display:block}
+.prizes small{color:var(--muted)}
+
+/* Form */
+form{max-width:44rem}
+fieldset{border:0;margin:0 0 2.75rem;padding:0;min-width:0}
+legend{font:600 1.5rem/1.25 var(--serif);padding:0;margin-bottom:.35rem;color:var(--navy)}
+.hint{color:var(--muted);font-size:.93rem;margin:0 0 1.1rem;max-width:62ch}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media (max-width:560px){.row{grid-template-columns:1fr}}
+.field{margin-bottom:1rem}
+label.lbl{display:block;font-weight:500;font-size:.95rem;margin-bottom:.3rem}
+.opt{color:var(--muted);font-weight:400}
+input[type=text],input[type=email],select,textarea{
+  width:100%;font:inherit;color:var(--ink);background:var(--field);
+  border:1px solid var(--line);border-radius:4px;padding:.6rem .7rem}
+textarea{min-height:6rem;resize:vertical}
+input:hover,select:hover,textarea:hover{border-color:var(--muted)}
+.invalid{border-color:var(--error)!important}
+.err{color:var(--error);font-size:.85rem;margin-top:.3rem;display:none}
+.err.show{display:block}
+
+.choices{display:flex;flex-wrap:wrap;gap:.5rem 1.25rem}
+.choice{display:flex;align-items:flex-start;gap:.5rem;font-size:.95rem;cursor:pointer}
+.choice input{margin-top:.3rem;accent-color:var(--navy);width:1.05rem;height:1.05rem}
+
+/* Members */
+.member{border-top:1px solid var(--line);padding-top:1.1rem;margin-top:1.1rem}
+.member-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.6rem}
+.member-head h3{font:600 1.05rem/1.3 var(--serif);margin:0}
+.btn-text{background:none;border:0;color:var(--ieee);font:inherit;font-size:.9rem;cursor:pointer;padding:.25rem;text-decoration:underline}
+.btn-add{margin-top:1rem;background:transparent;border:1.5px dashed var(--muted);color:var(--ink);font:500 .95rem var(--sans);padding:.7rem 1rem;border-radius:4px;cursor:pointer;width:100%}
+.btn-add:hover{border-color:var(--navy);color:var(--navy)}
+
+/* Weekend calendar — the one bold element */
+.cal{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--field)}
+.cal-head,.cal-row{display:grid;grid-template-columns:6.5rem 1fr 1fr}
+.cal-head{background:var(--navy);color:#fff;font-size:.85rem;font-weight:600}
+:root[data-theme="dark"] .cal-head{color:#0F1A21}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .cal-head{color:#0F1A21}}
+.cal-head div{padding:.55rem .75rem}
+.cal-row{border-top:1px solid var(--line)}
+.cal-week{padding:.75rem;font-size:.8rem;color:var(--muted);display:flex;align-items:center}
+.day{position:relative;border-left:1px solid var(--line)}
+.day input{position:absolute;opacity:0;pointer-events:none}
+.day label{display:flex;flex-direction:column;justify-content:center;min-height:4.25rem;padding:.6rem .8rem;cursor:pointer;transition:background .15s}
+.day label:hover{background:var(--off)}
+.day .num{font:700 1.6rem/1 var(--serif)}
+.day .mon{font-size:.8rem;color:var(--muted);margin-top:.2rem}
+.day input:checked+label{background:var(--navy);color:#fff}
+.day input:checked+label .mon{color:#CFE0EA}
+:root[data-theme="dark"] .day input:checked+label{color:#0F1A21}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .day input:checked+label{color:#0F1A21}:root:not([data-theme="light"]) .day input:checked+label .mon{color:#1B2A33}}
+.day input:checked+label::after{content:"✓";position:absolute;top:.55rem;right:.75rem;font-weight:700}
+.day input:focus-visible+label{outline:3px solid var(--ieee);outline-offset:-3px}
+.day.off label{cursor:not-allowed;background:repeating-linear-gradient(135deg,var(--off) 0 6px,transparent 6px 12px)}
+.day.off .num{text-decoration:line-through;color:var(--muted);font-weight:400}
+.day.none{background:var(--off)}
+@media (max-width:480px){.cal-head,.cal-row{grid-template-columns:4.5rem 1fr 1fr}.cal-week{font-size:.72rem;padding:.6rem}}
+
+/* Acknowledgements & submit */
+.ack{background:var(--off);border-radius:6px;padding:1rem 1.1rem}
+.ack .choice{margin:.55rem 0}
+.hp{position:absolute;left:-9999px}
+.submit{background:var(--navy);color:#fff;border:0;font:600 1.05rem var(--sans);padding:.9rem 1.75rem;border-radius:4px;cursor:pointer}
+:root[data-theme="dark"] .submit{color:#0F1A21}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .submit{color:#0F1A21}}
+.submit:hover{filter:brightness(1.12)}
+.submit[disabled]{opacity:.6;cursor:wait}
+.form-msg{margin-top:1rem;font-size:.95rem}
+.form-msg.error{color:var(--error)}
+
+/* Confirmation */
+.done{display:none;max-width:44rem}
+.done.show{display:block}
+.done h2{font:700 2rem/1.2 var(--serif);color:var(--ok);margin:0 0 .5rem}
+.done pre{white-space:pre-wrap;background:var(--off);padding:1rem;border-radius:6px;font-size:.85rem;max-height:22rem;overflow:auto}
+.done .actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1rem}
+.done .actions a,.done .actions button{font:500 .95rem var(--sans);padding:.6rem 1rem;border-radius:4px;border:1px solid var(--navy);background:transparent;color:var(--navy);cursor:pointer;text-decoration:none}
+
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}
+footer div{max-width:72rem;margin:0 auto;padding:1.5rem 1.25rem}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="back" href="./">Back to the competition page</a>
+    <h1>Thinking about competing? Tell us.</h1>
+    <p>This short form helps  <a href="https://www.linkedin.com/in/kartik-bulusu-1295261/" target="_blank" rel="noopener noreferrer" style="color: yellow;">Prof. Kartik Bulusu</a> and IEEE SSIT gauge interest and pick a weekend date for the IEEE Student Ethics Competition. It takes about three minutes and doesn't commit you to anything.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <form id="interest" novalidate>
+    <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <!-- Team -->
+    <fieldset>
+      <legend>Your team</legend>
+      <p class="hint">
+        <li>Teams have up to three GWU undergraduate students.</li> 
+        <li>No team yet? Sign up on your own and we'll help match you with others.</li>
+      </p>
+
+      <div class="field">
+        <span class="lbl" id="entry-lbl" style="display:block;font-weight:500;font-size:.95rem;margin-bottom:.4rem">How are you entering?</span>
+        <div class="choices" role="radiogroup" aria-labelledby="entry-lbl">
+          <label class="choice"><input type="radio" name="entry_type" value="Team" checked> As a team (2–3 students)</label>
+          <label class="choice"><input type="radio" name="entry_type" value="Individual, looking for teammates"> On my own, please match me with a team</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="lbl" for="team_name">Team name <span class="opt">(optional)</span></label>
+        <input type="text" id="team_name" name="team_name" maxlength="60" placeholder="e.g. The Fourth Clause">
+      </div>
+
+      <div id="members"></div>
+      <button type="button" class="btn-add" id="addMember">Add a teammate</button>
+    </fieldset>
+
+    <!-- Availability -->
+    <fieldset>
+      <legend>Which weekend days work?</legend>
+      <p class="hint">Select every date your whole team could attend. The event runs from about 10:30 AM to 3:30 PM in Lehman Auditorium, Science and Engineering Hall. The weekend days when the facility is not available is marked in the list below.</p>
+
+      <div class="cal" role="group" aria-label="Available weekend dates">
+        <div class="cal-head" aria-hidden="true"><div>Weekend</div><div>Saturday</div><div>Sunday</div></div>
+        <div id="calRows"></div>
+      </div>
+      <div class="err" id="dates-err">Pick at least one date, or choose "None of these work" below.</div>
+
+      <div class="field" style="margin-top:1rem">
+        <label class="choice"><input type="checkbox" id="no_dates" name="no_dates" value="None of the listed dates work"> None of these work for us</label>
+      </div>
+
+      <div class="field">
+        <label class="lbl" for="first_choice">First choice <span class="opt">(optional)</span></label>
+        <select id="first_choice" name="first_choice"><option value="">No preference</option></select>
+      </div>
+    </fieldset>
+
+    <!-- Extras -->
+    <fieldset>
+      <legend>A few more details</legend>
+
+      <div class="field">
+        <span class="lbl" style="display:block;font-weight:500;font-size:.95rem;margin-bottom:.4rem">Would your team attend a short prep session on the IEEE Code of Ethics before the competition?</span>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="prep_session" value="Yes"> Yes</label>
+          <label class="choice"><input type="radio" name="prep_session" value="Maybe"> Maybe</label>
+          <label class="choice"><input type="radio" name="prep_session" value="No"> No</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="lbl" for="experience">Has anyone on your team done an ethics bowl, case competition, or debate before? <span class="opt">(optional)</span></label>
+        <input type="text" id="experience" name="experience" maxlength="200">
+      </div>
+
+      <div class="field">
+        <label class="lbl" for="dietary">Dietary needs for the pizza lunch <span class="opt">(optional)</span></label>
+        <input type="text" id="dietary" name="dietary" maxlength="200" placeholder="e.g. vegetarian, gluten-free">
+      </div>
+
+      <div class="field">
+        <label class="lbl" for="access">Accessibility needs <span class="opt">(optional)</span></label>
+        <input type="text" id="access" name="accessibility" maxlength="200">
+      </div>
+
+      <div class="field">
+        <label class="lbl" for="heard">How did you hear about the competition? <span class="opt">(optional)</span></label>
+        <select id="heard" name="heard_from">
+          <option value="">Select one</option>
+          <option>GWU IEEE Student Branch</option>
+          <option>A professor or class</option>
+          <option>Friend or classmate</option>
+          <option>Email or newsletter</option>
+          <option>Social media</option>
+          <option>Flyer or poster</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label class="lbl" for="comments">Questions or comments <span class="opt">(optional)</span></label>
+        <textarea id="comments" name="comments" maxlength="1000"></textarea>
+      </div>
+    </fieldset>
+
+    <!-- Acknowledgements -->
+    <fieldset>
+      <legend>Before you submit</legend>
+      <div class="ack">
+        <label class="choice"><input type="checkbox" name="ack_eligible" value="Yes" required> Everyone listed is a current GWU undergraduate student.</label>
+        <label class="choice"><input type="checkbox" name="ack_intent" value="Yes" required> I understand this is an interest form only. To secure a spot, we still need to submit the official Intent to Compete form once the date is announced; spots are limited to 8 teams, filled in the order forms arrive.</label>
+      </div>
+      <div class="err" id="ack-err">Please confirm both statements.</div>
+    </fieldset>
+
+    <button type="submit" class="submit" id="submitBtn">Send interest form</button>
+    <div class="form-msg" id="formMsg" role="status" aria-live="polite"></div>
+  </form>
+
+  <!-- Confirmation -->
+  <div class="done" id="done" tabindex="-1">
+    <h2>Interest form sent</h2>
+    <p id="doneText">Thanks. The organizers will email the contact person once the competition date is set.</p>
+    <pre id="summary"></pre>
+    <div class="actions">
+      <a id="mailBtn" href="#">Open email draft</a>
+      <button type="button" id="copyBtn">Copy responses</button>
+      <a href="./">Back to the competition page</a>
+    </div>
+  </div>
+
+  <!-- Key facts -->
+  <aside class="facts" aria-label="Competition details">
+    <section>
+      <h2>Awards</h2>
+      <table class="prizes">
+        <tr><th>First</th><td><span class="amt">$50</span><small>per team member, plus a certificate</small></td></tr>
+        <tr><th>Second</th><td><span class="amt">$30</span><small>per team member, plus a certificate</small></td></tr>
+        <tr><th>Third</th><td><span class="amt">Certificate</span></td></tr>
+      </table>
+    </section>
+    <section>
+      <h2>How it works</h2>
+      <ul>
+        <li>Every team gets the same engineering ethics case on the day.</li>
+        <li>About an hour to prepare slides, offline, in an assigned room.</li>
+        <li>8–10 minute presentation, then 5 minutes of judges' questions.</li>
+        <li>Analysis must be grounded in the <a href="https://www.ieee.org/about/corporate/governance/p7-8.html" target="_blank" rel="noopener">IEEE Code of Ethics</a>.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Good to know</h2>
+      <ul>
+        <li>Open to GWU undergraduates only.</li>
+        <li>No registration fee. IEEE membership isn't required, but student membership is encouraged.</li>
+        <li>Pizza lunch provided.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Questions</h2>
+      <p>Email Dr. Kartik Bulusu at <a href="mailto:bulusu@gwu.edu">bulusu@gwu.edu</a>.</p>
+    </section>
+  </aside>
+
+</main>
+
+<footer><div>Organized by GWU MAE Department, IEEE SSIT, with support from the GWU IEEE, SHPE and Theta Tau.</div></footer>
+
+<script>
+/* ===== CONFIGURATION =====================================================
+   To collect responses automatically, create a free form at formspree.io
+   (or similar), then paste its endpoint here, e.g.
+   const FORM_ENDPOINT = "https://formspree.io/f/abcdwxyz";
+   Left empty, submitting opens an email draft to the organizers instead. */
+const FORM_ENDPOINT = "https://formspree.io/f/xkjoojkk";
+const ORGANIZER_EMAIL = "kartik.bulusu@gmail.com";
+/* ======================================================================== */
+
+// Weekends from fall break through Nov 21, 2026. "off" = not available.
+const WEEKENDS = [
+  { sat:{d:"2026-10-10", off:true}, sun:{d:"2026-10-11",off:true}, note:"Fall break" },
+  { sat:{d:"2026-10-17", off:true}, sun:{d:"2026-10-18"} },
+  { sat:{d:"2026-10-24", off:true}, sun:{d:"2026-10-25", off:true} },
+  { sat:{d:"2026-10-31"}, sun:{d:"2026-11-01"} },
+  { sat:{d:"2026-11-07",off:true}, sun:{d:"2026-11-08"} },
+  { sat:{d:"2026-11-14", off:true}, sun:{d:"2026-11-15"} }
+];
+
+const fmtLong = iso => new Date(iso+"T12:00:00").toLocaleDateString("en-US",{weekday:"long",month:"long",day:"numeric",year:"numeric"});
+const fmtShort = iso => new Date(iso+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric"});
+
+// Build calendar
+const calRows = document.getElementById("calRows");
+const firstChoice = document.getElementById("first_choice");
+WEEKENDS.forEach(w=>{
+  const row = document.createElement("div"); row.className="cal-row";
+  const week = document.createElement("div"); week.className="cal-week";
+  week.textContent = w.note || fmtShort(w.sat.d);
+  row.appendChild(week);
+  [w.sat,w.sun].forEach(day=>{
+    const cell = document.createElement("div");
+    if(!day){ cell.className="day none"; cell.setAttribute("aria-hidden","true"); row.appendChild(cell); return; }
+    const dt = new Date(day.d+"T12:00:00");
+    const id = "d"+day.d;
+    cell.className = "day"+(day.off?" off":"");
+    const mon = dt.toLocaleDateString("en-US",{month:"short"});
+    if(day.off){
+      cell.innerHTML = `<label aria-disabled="true" title="Not available"><span class="num">${dt.getDate()}</span><span class="mon">${mon}, unavailable</span></label>`;
+    }else{
+      cell.innerHTML = `<input type="checkbox" id="${id}" name="dates" value="${fmtLong(day.d)}"><label for="${id}"><span class="num">${dt.getDate()}</span><span class="mon">${mon}</span><span class="hp">${fmtLong(day.d)}</span></label>`;
+    }
+    row.appendChild(cell);
+  });
+  calRows.appendChild(row);
+});
+
+function refreshFirstChoice(){
+  const keep = firstChoice.value;
+  const picked = [...document.querySelectorAll('input[name="dates"]:checked')].map(i=>i.value);
+  firstChoice.innerHTML = '<option value="">No preference</option>' + picked.map(v=>`<option${v===keep?" selected":""}>${v}</option>`).join("");
+}
+calRows.addEventListener("change", ()=>{
+  if(document.querySelector('input[name="dates"]:checked')) document.getElementById("no_dates").checked=false;
+  refreshFirstChoice(); document.getElementById("dates-err").classList.remove("show");
+});
+document.getElementById("no_dates").addEventListener("change", e=>{
+  if(e.target.checked){ document.querySelectorAll('input[name="dates"]').forEach(i=>i.checked=false); refreshFirstChoice(); }
+  document.getElementById("dates-err").classList.remove("show");
+});
+
+// Team members
+const membersEl = document.getElementById("members");
+const addBtn = document.getElementById("addMember");
+let count = 0;
+function memberBlock(n){
+  const isContact = n===1;
+  const div = document.createElement("div"); div.className="member"; div.dataset.n=n;
+  div.innerHTML = `
+    <div class="member-head">
+      <h3>Member ${n}${isContact?" (main contact)":""}</h3>
+      ${isContact?"":'<button type="button" class="btn-text remove">Remove</button>'}
+    </div>
+    <div class="row">
+      <div class="field"><label class="lbl" for="m${n}_name">Full name</label>
+        <input type="text" id="m${n}_name" name="member${n}_name" autocomplete="${isContact?"name":"off"}" ${isContact?"required":""}>
+        <div class="err">Enter a name.</div></div>
+      <div class="field"><label class="lbl" for="m${n}_email">GWU email</label>
+        <input type="email" id="m${n}_email" name="member${n}_email" placeholder="name@gwu.edu" ${isContact?"required":""}>
+        <div class="err">Enter a GWU email ending in @gwu.edu.</div></div>
+    </div>
+    <div class="row">
+      <div class="field"><label class="lbl" for="m${n}_year">Class year</label>
+        <select id="m${n}_year" name="member${n}_year"><option value="">Select</option><option>First-year</option><option>Sophomore</option><option>Junior</option><option>Senior</option></select></div>
+      <div class="field"><label class="lbl" for="m${n}_major">Major</label>
+        <input type="text" id="m${n}_major" name="member${n}_major" placeholder="e.g. Mechanical Engineering"></div>
+    </div>
+    <div class="field"><span class="lbl" style="display:block;font-weight:500;font-size:.95rem;margin-bottom:.4rem">IEEE student member?</span>
+      <div class="choices">
+        <label class="choice"><input type="radio" name="member${n}_ieee" value="Yes"> Yes</label>
+        <label class="choice"><input type="radio" name="member${n}_ieee" value="No"> No</label>
+        <label class="choice"><input type="radio" name="member${n}_ieee" value="Not sure"> Not sure</label>
+      </div></div>`;
+  return div;
+}
+function renumber(){
+  [...membersEl.children].forEach((el,i)=>{
+    const n=i+1, old=el.dataset.n; if(String(n)===old) return;
+    el.dataset.n=n;
+    el.querySelector("h3").textContent = "Member "+n+(n===1?" (main contact)":"");
+    el.querySelectorAll("[id],[for],[name]").forEach(x=>{
+      ["id","for","name"].forEach(a=>{ const v=x.getAttribute(a); if(v) x.setAttribute(a, v.replace("m"+old+"_","m"+n+"_").replace("member"+old+"_","member"+n+"_")); });
+    });
+  });
+  count = membersEl.children.length;
+  addBtn.hidden = count>=3 || isIndividual();
+}
+function isIndividual(){ return document.querySelector('input[name="entry_type"]:checked').value!=="Team"; }
+function addMember(){ if(count>=3) return; count++; membersEl.appendChild(memberBlock(count)); renumber(); }
+membersEl.addEventListener("click", e=>{ if(e.target.classList.contains("remove")){ e.target.closest(".member").remove(); renumber(); }});
+addBtn.addEventListener("click", ()=>{ addMember(); membersEl.lastElementChild.querySelector("input").focus(); });
+document.querySelectorAll('input[name="entry_type"]').forEach(r=>r.addEventListener("change", ()=>{
+  if(isIndividual()){ while(membersEl.children.length>1) membersEl.lastElementChild.remove(); }
+  renumber();
+}));
+addMember(); addMember();
+
+// Validation
+const gwuEmail = v => /^[^\s@]+@gwu\.edu$/i.test(v.trim());
+function setErr(input, bad){
+  input.classList.toggle("invalid", bad);
+  input.setAttribute("aria-invalid", bad?"true":"false");
+  const e = input.parentElement.querySelector(".err"); if(e) e.classList.toggle("show", bad);
+}
+function validate(){
+  let first = null, ok = true;
+  const flag = (el)=>{ ok=false; if(!first) first=el; };
+  [...membersEl.children].forEach(m=>{
+    const n = m.dataset.n;
+    const name = m.querySelector(`[name="member${n}_name"]`), email = m.querySelector(`[name="member${n}_email"]`);
+    const used = n==="1" || name.value.trim() || email.value.trim();
+    const badName = used && !name.value.trim();
+    const badEmail = used && !gwuEmail(email.value);
+    setErr(name,badName); setErr(email,badEmail);
+    if(badName) flag(name); if(badEmail) flag(email);
+  });
+  const anyDate = document.querySelector('input[name="dates"]:checked') || document.getElementById("no_dates").checked;
+  document.getElementById("dates-err").classList.toggle("show", !anyDate);
+  if(!anyDate) flag(document.querySelector('input[name="dates"]'));
+  const acks = [...document.querySelectorAll(".ack input")];
+  const ackOk = acks.every(a=>a.checked);
+  document.getElementById("ack-err").classList.toggle("show", !ackOk);
+  if(!ackOk) flag(acks.find(a=>!a.checked));
+  if(first) first.focus();
+  return ok;
+}
+
+// Collect & summarize
+function collect(){
+  const fd = new FormData(document.getElementById("interest"));
+  const data = {};
+  for(const [k,v] of fd.entries()){
+    if(k==="_gotcha") continue;
+    if(!String(v).trim()) continue;
+    data[k] = data[k] ? data[k]+"; "+v : v;
+  }
+  data.submitted_at = new Date().toISOString();
+  return data;
+}
+function summarize(d){
+  const L = [];
+  L.push("IEEE Student Ethics Competition: interest form");
+  L.push("Entry: "+(d.entry_type||""));
+  if(d.team_name) L.push("Team name: "+d.team_name);
+  for(let n=1;n<=3;n++){
+    if(!d[`member${n}_name`]) continue;
+    L.push(`\nMember ${n}${n===1?" (contact)":""}: ${d[`member${n}_name`]} <${d[`member${n}_email`]||""}>`);
+    const extra = [d[`member${n}_year`], d[`member${n}_major`], d[`member${n}_ieee`] && "IEEE member: "+d[`member${n}_ieee`]].filter(Boolean);
+    if(extra.length) L.push("  "+extra.join(", "));
+  }
+  L.push("\nAvailable dates: "+(d.dates||d.no_dates||"none given"));
+  if(d.first_choice) L.push("First choice: "+d.first_choice);
+  const more = [["Prep session",d.prep_session],["Experience",d.experience],["Dietary",d.dietary],["Accessibility",d.accessibility],["Heard from",d.heard_from],["Comments",d.comments]];
+  more.forEach(([k,v])=>{ if(v) L.push(k+": "+v); });
+  return L.join("\n");
+}
+function showDone(text, viaEmail){
+  const subject = "Ethics Competition interest: "+(collect().team_name||document.getElementById("m1_name").value);
+  const mailto = `mailto:${ORGANIZER_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`;
+  document.getElementById("summary").textContent = text;
+  document.getElementById("mailBtn").href = mailto;
+  if(viaEmail){
+    document.querySelector("#done h2").textContent = "Almost done: send the email";
+    document.getElementById("doneText").innerHTML = `An email draft to <a href="mailto:${ORGANIZER_EMAIL}">${ORGANIZER_EMAIL}</a> should have opened. Press send there to finish. If no draft appeared, copy your responses below and email them yourself.`;
+    window.location.href = mailto;
+  }else{
+    document.getElementById("mailBtn").hidden = true;
+  }
+  document.getElementById("interest").hidden = true;
+  const done = document.getElementById("done"); done.classList.add("show"); done.focus();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+document.getElementById("copyBtn").addEventListener("click", async e=>{
+  try{ await navigator.clipboard.writeText(document.getElementById("summary").textContent); e.target.textContent="Copied"; }
+  catch{ e.target.textContent="Select the text above to copy"; }
+});
+
+// Submit
+document.getElementById("interest").addEventListener("submit", async e=>{
+  e.preventDefault();
+  const msg = document.getElementById("formMsg"); msg.textContent=""; msg.className="form-msg";
+  if(!validate()){ msg.textContent="Some answers need attention. They're marked in red above."; msg.classList.add("error"); return; }
+  const data = collect(), text = summarize(data);
+  if(!FORM_ENDPOINT){ showDone(text, true); return; }
+  const btn = document.getElementById("submitBtn"); btn.disabled = true; btn.textContent = "Sending…";
+  try{
+    const res = await fetch(FORM_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},
+      body:JSON.stringify({...data, _subject:"Ethics Competition interest form", _replyto:data.member1_email, summary:text})});
+    if(!res.ok) throw new Error(res.status);
+    showDone(text, false);
+  }catch(err){
+    msg.textContent = "The form couldn't be sent. Check your connection and try again, or email your answers to "+ORGANIZER_EMAIL+".";
+    msg.classList.add("error");
+  }finally{ btn.disabled=false; btn.textContent="Send interest form"; }
+});
+</script>
+</body>
+</html>
